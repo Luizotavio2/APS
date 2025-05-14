@@ -1,9 +1,7 @@
-// Accordion functionality
 document.querySelectorAll('.accordion__button').forEach(button => {
     button.addEventListener('click', () => {
         const accordionItem = button.parentElement;
         
-        // Close all other accordion items
         document.querySelectorAll('.accordion__item').forEach(item => {
             if (item !== accordionItem) {
                 item.classList.remove('active');
@@ -11,7 +9,6 @@ document.querySelectorAll('.accordion__button').forEach(button => {
             }
         });
 
-        // Toggle current item
         accordionItem.classList.toggle('active');
         const content = button.nextElementSibling;
         
@@ -23,7 +20,6 @@ document.querySelectorAll('.accordion__button').forEach(button => {
     });
 });
 
-// Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -40,13 +36,3 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
-
-// Form submission
-const contactForm = document.querySelector('.contact__form');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        alert('Obrigado por sua mensagem! Responderemos em breve.');
-        this.reset();
-    });
-}
